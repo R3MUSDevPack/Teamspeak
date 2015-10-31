@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3MUS.Devpack.Teamspeak", "R3MUS.Devpack.Teamspeak\R3MUS.Devpack.Teamspeak.csproj", "{04CDA44B-CD4E-4C46-80D0-CF174958CBD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3MUS.Devpack.Teamspeak.TestHarness", "R3MUS.Devpack.Teamspeak.TestHarness\R3MUS.Devpack.Teamspeak.TestHarness.csproj", "{B4185530-F172-47D5-8FC7-4425F8CD1D40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04CDA44B-CD4E-4C46-80D0-CF174958CBD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04CDA44B-CD4E-4C46-80D0-CF174958CBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04CDA44B-CD4E-4C46-80D0-CF174958CBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04CDA44B-CD4E-4C46-80D0-CF174958CBD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4185530-F172-47D5-8FC7-4425F8CD1D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4185530-F172-47D5-8FC7-4425F8CD1D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4185530-F172-47D5-8FC7-4425F8CD1D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4185530-F172-47D5-8FC7-4425F8CD1D40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
