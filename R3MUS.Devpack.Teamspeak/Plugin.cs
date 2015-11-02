@@ -91,15 +91,24 @@ namespace R3MUS.Devpack.Teamspeak
             return true;
         }
 
+        private async Task GetDBList()
+        {
+            Task<TextResult> result = client.SendCommandAsync("clientdblist");
+            TextResult resultText = await result;
+        }
+
         public async Task DeleteUser(string userPattern)
         {
-            //await client.SendCommandAsync("clientdbdelete cldbid={0}");
             if (Start())
             {
                 try {
-                    Task<TextResult> result = client.SendCommandAsync(string.Concat("clientdbfind pattern=sven", userPattern));
+                    //await GetDBList();
+                    Task<TextResult> result = client.SendCommandAsync(string.Format("clientdbfind pattern={0}", userPattern.Replace(" ", @"\s")));
                     TextResult resultText = await result;
-                    DBID = Convert.ToInt32(resultText.Response.Substring((resultText.Response.IndexOf("cldbid=") + 7), (resultText.Response.Length - (resultText.Response.IndexOf("cldbid=") + 7))));
+                    var clDBID = Convert.ToInt32(resultText.Response.Substring((resultText.Response.IndexOf("cldbid=") + 7), (resultText.Response.Length - (resultText.Response.IndexOf("cldbid=") + 7))));
+
+                    result = client.SendCommandAsync(string.Format("clientdbdelete cldbid={0}", clDBID.ToString()));
+                    resultText = await result;
                 }
                 catch(Exception ex)
                 { }

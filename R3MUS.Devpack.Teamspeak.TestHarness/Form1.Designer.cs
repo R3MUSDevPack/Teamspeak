@@ -57,7 +57,7 @@
             this.txtbxUrl.Name = "txtbxUrl";
             this.txtbxUrl.Size = new System.Drawing.Size(189, 20);
             this.txtbxUrl.TabIndex = 1;
-            this.txtbxUrl.Text = "ah.nerfedalliance.com";
+            this.txtbxUrl.Text = "r3mus.org";
             // 
             // txtbxSQName
             // 
@@ -73,7 +73,7 @@
             this.txtbxSQPWrd.Name = "txtbxSQPWrd";
             this.txtbxSQPWrd.Size = new System.Drawing.Size(189, 20);
             this.txtbxSQPWrd.TabIndex = 3;
-            this.txtbxSQPWrd.Text = "vtLA4ucx";
+            this.txtbxSQPWrd.Text = "RJu92GDR";
             // 
             // label1
             // 
@@ -121,6 +121,7 @@
             this.txtbxMsg.Name = "txtbxMsg";
             this.txtbxMsg.Size = new System.Drawing.Size(189, 20);
             this.txtbxMsg.TabIndex = 8;
+            this.txtbxMsg.Text = "[NAGA] Doctor Ejabig";
             // 
             // button2
             // 
