@@ -58,5 +58,32 @@ namespace R3MUS.Devpack.Teamspeak.TestHarness
                 MessageBox.Show("You need to select someone to poke");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            GetUserFromDB();
+        }
+        private async Task GetUserFromDB()
+        {
+            if(plugin == null)
+            {
+                plugin = new Plugin()
+                {
+                    Url = txtbxUrl.Text,
+                    Login = txtbxSQName.Text,
+                    Password = txtbxSQPWrd.Text
+                };
+            }
+            try
+            {
+                await plugin.DeleteUser(txtbxMsg.Text);
+                txtbxMsg.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You need to select someone to poke");
+            }
+        }
+
     }
 }

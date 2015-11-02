@@ -38,6 +38,7 @@
             this.lstvwClients = new System.Windows.Forms.ListView();
             this.txtbxMsg = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -109,7 +110,7 @@
             this.lstvwClients.FullRowSelect = true;
             this.lstvwClients.Location = new System.Drawing.Point(28, 127);
             this.lstvwClients.Name = "lstvwClients";
-            this.lstvwClients.Size = new System.Drawing.Size(388, 172);
+            this.lstvwClients.Size = new System.Drawing.Size(709, 172);
             this.lstvwClients.TabIndex = 7;
             this.lstvwClients.UseCompatibleStateImageBehavior = false;
             this.lstvwClients.View = System.Windows.Forms.View.Details;
@@ -131,11 +132,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(491, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 38);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Find DBID";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 311);
+            this.ClientSize = new System.Drawing.Size(801, 311);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtbxMsg);
             this.Controls.Add(this.lstvwClients);
@@ -165,6 +177,7 @@
         private System.Windows.Forms.ListView lstvwClients;
         private System.Windows.Forms.TextBox txtbxMsg;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

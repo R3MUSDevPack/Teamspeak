@@ -68,7 +68,7 @@ namespace R3MUS.Devpack.Teamspeak
 
                     if (ClientInfo != null)
                     {
-                        await GetDBID(ClientInfo.ClientUniqueIdentifier);
+                        await GetDBIDFromUID(ClientInfo.ClientUniqueIdentifier);
                         await GetServerGroup(groupName);
                         await AddClient();
                         Message = string.Format("User {0} successfully created on TS Server {1}.", name, Url);
@@ -89,6 +89,25 @@ namespace R3MUS.Devpack.Teamspeak
                 }
             }
             return true;
+        }
+
+        public async Task DeleteUser(string userPattern)
+        {
+            //await client.SendCommandAsync("clientdbdelete cldbid={0}");
+            if (Start())
+            {
+                try {
+                    Task<TextResult> result = client.SendCommandAsync(string.Concat("clientdbfind pattern=sven", userPattern));
+                    TextResult resultText = await result;
+                    DBID = Convert.ToInt32(resultText.Response.Substring((resultText.Response.IndexOf("cldbid=") + 7), (resultText.Response.Length - (resultText.Response.IndexOf("cldbid=") + 7))));
+                }
+                catch(Exception ex)
+                { }
+                finally
+                {
+                    Stop();
+                }
+            }
         }
 
         public void Stop()
@@ -117,7 +136,7 @@ namespace R3MUS.Devpack.Teamspeak
             }
         }
 
-        private async Task GetDBID(string ID)
+        private async Task GetDBIDFromUID(string ID)
         {
             Task<TextResult> result = client.SendCommandAsync(string.Concat("clientgetdbidfromuid cluid=", ID));
             TextResult resultText = await result;
