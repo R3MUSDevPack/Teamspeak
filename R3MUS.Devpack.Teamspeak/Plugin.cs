@@ -48,7 +48,7 @@ namespace R3MUS.Devpack.Teamspeak
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -57,8 +57,8 @@ namespace R3MUS.Devpack.Teamspeak
 
         public async Task<bool> AddClient(string name, string groupName)
         {
-            if(Start())
-            { 
+            if (Start())
+            {
                 try
                 {
                     //await client.KeepAlive(TimeSpan.FromMinutes(2));
@@ -150,12 +150,13 @@ namespace R3MUS.Devpack.Teamspeak
                 Message = string.Concat("Teamspeak Registration Unsuccessful: ", resultText.Response);
             }
         }
-        
-        public async void Send(string[] clid, string msg)
+
+        public async void Send(string clid, string msg)
         {
             if ((msg.Length > 0) && (Start()))
             {
-                try {
+                try
+                {
                     clid.ToList().ForEach(async id => await client.ClientPoke(msg, Convert.ToInt32(clid)));
                 }
                 catch (TaskCanceledException ex)
@@ -175,7 +176,7 @@ namespace R3MUS.Devpack.Teamspeak
 
         public async void Kick(string[] clid, string msg)
         {
-            if(Start())
+            if (Start())
             {
                 ServerQueryBaseResult result;
                 try
@@ -193,6 +194,7 @@ namespace R3MUS.Devpack.Teamspeak
                 {
                     Stop();
                 }
+            }
         }
     }
 }
